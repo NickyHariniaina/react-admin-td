@@ -30,7 +30,7 @@ const ListActions = () => {
 
 export const EmployeeList = () => {
     return <List filters={employeeFilters} pagination={<CustomPagination />} actions={<ListActions />}>
-        <DataTable rowClick="edit">
+        <DataTable rowClick="show">
             <DataTable.Col source="prenom">
                 <TextField source="prenom" />
             </DataTable.Col>
