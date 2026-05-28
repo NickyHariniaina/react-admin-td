@@ -1,26 +1,4 @@
-# employes-admin — TP React-Admin CRUD
-
-## Installation
-
-```sh
-npm install
-```
-
-## Développement
-
-Lancer l'API simulée :
-
-```sh
-npx json-server db.json --port 3002
-```
-
-Puis dans un autre terminal :
-
-```sh
-npm run dev
-```
-
----
+# STD24033
 
 ## Exercice pratique — Réponses
 
@@ -33,9 +11,6 @@ Le **dataProvider** est un objet qui fait le pont entre React-Admin et l'API RES
 #### 1.2 Quelle requête HTTP est envoyée au chargement de la liste ?
 
 Une requête **GET** vers `http://localhost:3002/employees` avec les paramètres `_sort`, `_order`, `_start`, `_end` et éventuellement `q` pour la recherche. Exemple :
-```
-GET http://localhost:3002/employees?_sort=id&_order=ASC&_start=0&_end=10
-```
 
 ---
 
@@ -82,16 +57,4 @@ Une requête **PUT** est envoyée vers `http://localhost:3002/employees/:id` ave
 - **SimpleShowLayout** : affiche tous les champs les uns en dessous des autres, dans une seule colonne, sans onglets.
 - **TabbedShowLayout** : permet d'organiser les champs dans plusieurs onglets. Chaque `Tab` regroupe une partie des champs. Utile quand il y a beaucoup d'informations à catégoriser (ex: infos personnelles, infos professionnelles, etc.).
 
-En résumé : `SimpleShowLayout` = vue linéaire simple ; `TabbedShowLayout` = vue organisée par catégories avec des onglets.
-
 ---
-
-### Exo 6 — Assemblage final
-
-Le fichier `App.tsx` déclare la ressource `employees` avec les quatre vues :
-
-```tsx
-<Resource name="employees" list={EmployeeList} create={EmployeeCreate} edit={EmployeeEdit} show={EmployeeShow}/>
-```
-
-Toutes les opérations CRUD (Create, Read, Update, Delete) sont fonctionnelles de bout en bout.
