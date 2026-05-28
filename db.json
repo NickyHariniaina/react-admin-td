@@ -23,6 +23,22 @@
       "departement": "RH",
       "salaire": 2600,
       "actif": false
+    },
+    {
+      "id": 4,
+      "prenom": "David",
+      "email": "david@company.com",
+      "departement": "informatique",
+      "salaire": 3200,
+      "actif": true
+    },
+    {
+      "id": 5,
+      "prenom": "David",
+      "email": "emma@company.com",
+      "departement": "marketing",
+      "salaire": 2200,
+      "actif": true
     }
   ]
 }
