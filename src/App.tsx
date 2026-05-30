@@ -5,11 +5,26 @@ import { EmployeeList } from "./employees/EmployeeList";
 import { EmployeeCreate } from "./employees/EmployeeCreate";
 import { EmployeeEdit } from "./employees/EmployeeEdit";
 import { EmployeeShow } from "./employees/EmployeeShow";
+import { InternList } from "./interns/InternList";
+import { InternCreate } from "./interns/InternCreate";
+import { InternEdit } from "./interns/InternEdit";
+import { InternShow } from "./interns/InternShow";
 
 export const App = () => (
   <Admin layout={Layout} dataProvider={dataProvider}>
-    <Resource name="employees" list={EmployeeList} create={EmployeeCreate} edit={EmployeeEdit} show={EmployeeShow}/>
+    <Resource
+      name="employees"
+      list={EmployeeList}
+      create={EmployeeCreate}
+      edit={EmployeeEdit}
+      show={EmployeeShow}
+    />
+    <Resource
+      name="interns"
+      list={InternList}
+      create={InternCreate}
+      edit={InternEdit}
+      show={InternShow}
+    />
   </Admin>
 );
-
-//// Github: mbomain / Gmail:
