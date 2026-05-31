@@ -1,44 +1,60 @@
 {
+  "interns": [
+    {
+      "id": 1,
+      "idManager": 1,
+      "firstname": "Jonh Doe",
+      "salary": 2000,
+      "hasSalary": true
+    },
+    {
+        "id": 2,
+        "idManager": 2,
+        "firstname": "John Doe",
+        "salary": 0,
+        "hasSalary": false
+    }
+  ],
   "employees": [
     {
       "id": 1,
-      "prenom": "Alice Martin",
+      "firstname": "Alice Martin",
       "email": "alice@company.com",
-      "departement": "informatique",
-      "salaire": 2800,
-      "actif": true
+      "department": "informatique",
+      "salary": 2800,
+      "isActive": true
     },
     {
       "id": 2,
-      "prenom": "Bob Dupont",
+      "firstname": "Bob Dupont",
       "email": "bob@company.com",
-      "departement": "marketing",
-      "salaire": 2500,
-      "actif": true
+      "department": "marketing",
+      "salary": 2500,
+      "isActive": true
     },
     {
       "id": 3,
-      "prenom": "Clara Nguyen",
+      "firstname": "Clara Nguyen",
       "email": "clara@company.com",
-      "departement": "RH",
-      "salaire": 2600,
-      "actif": false
+      "department": "RH",
+      "salary": 2600,
+      "isActive": false
     },
     {
       "id": 4,
-      "prenom": "David",
+      "firstname": "David",
       "email": "david@company.com",
-      "departement": "informatique",
-      "salaire": 3200,
-      "actif": true
+      "department": "informatique",
+      "salary": 3200,
+      "isActive": true
     },
     {
       "id": 5,
-      "prenom": "David",
+      "firstname": "David",
       "email": "emma@company.com",
-      "departement": "marketing",
-      "salaire": 2200,
-      "actif": true
+      "department": "marketing",
+      "salary": 2200,
+      "isActive": true
     }
   ]
 }
