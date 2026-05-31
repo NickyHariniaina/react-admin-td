@@ -13,6 +13,27 @@
         "firstname": "John Doe",
         "salary": 0,
         "hasSalary": false
+    },
+    {
+      "id": 3,
+      "idManager": 4,
+      "firstname": "Sarah Bernard",
+      "salary": 1500,
+      "hasSalary": true
+    },
+    {
+      "id": 4,
+      "idManager": 1,
+      "firstname": "Lucas Petit",
+      "salary": 0,
+      "hasSalary": false
+    },
+    {
+      "id": 5,
+      "idManager": 5,
+      "firstname": "Marie Lambert",
+      "salary": 1800,
+      "hasSalary": true
     }
   ],
   "employees": [
