@@ -20,13 +20,13 @@ export const InternShow = () => {
   return (
     <Show actions={<ShowActions />}>
       <SimpleShowLayout>
-        <TextField source="prenom" />
+        <TextField source="firstname" />
         <NumberField source="idManager" />
         <NumberField
-          source="salaire"
+          source="salary"
           options={{ style: "currency", currency: "EUR" }}
         />
-        <BooleanField source="hasSalaire" />
+        <BooleanField source="hasSalary" />
       </SimpleShowLayout>
     </Show>
   );
