@@ -3,11 +3,15 @@ import {
   EditButton,
   ListButton,
   NumberField,
+  ReferenceField,
   Show,
   SimpleShowLayout,
   TextField,
   TopToolbar,
+  useRecordContext,
 } from "react-admin";
+import { Link } from "react-router-dom";
+import { ManagerCard } from "./ManagerCard";
 
 const ShowActions = () => (
   <TopToolbar>
@@ -16,18 +20,36 @@ const ShowActions = () => (
   </TopToolbar>
 );
 
-export const InternShow = () => {
+const ManagerLinkField = () => {
+  const record = useRecordContext();
+  if (!record) return null;
   return (
-    <Show actions={<ShowActions />}>
-      <SimpleShowLayout>
-        <TextField source="firstname" />
-        <NumberField source="idManager" />
-        <NumberField
-          source="salary"
-          options={{ style: "currency", currency: "EUR" }}
-        />
-        <BooleanField source="hasSalary" />
-      </SimpleShowLayout>
-    </Show>
+    <Link to={`/employees/${record.id}/show`}>
+      {record.firstname}
+    </Link>
   );
 };
+
+export const InternShow = () => (
+  <Show actions={<ShowActions />}>
+    <SimpleShowLayout>
+      <TextField source="prenom" label="Prénom" />
+      <TextField source="nom" label="Nom" />
+      <TextField source="email" />
+      <TextField source="department" />
+      <ReferenceField
+        source="idManager"
+        reference="employees"
+        label="Manager"
+      >
+        <ManagerLinkField />
+      </ReferenceField>
+      <NumberField
+        source="salary"
+        options={{ style: "currency", currency: "EUR" }}
+      />
+      <BooleanField source="hasSalary" label="Rémunéré" />
+      <ManagerCard />
+    </SimpleShowLayout>
+  </Show>
+);
