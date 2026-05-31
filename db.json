@@ -3,37 +3,52 @@
     {
       "id": 1,
       "idManager": 1,
-      "firstname": "Jonh Doe",
+      "prenom": "Jean",
+      "nom": "Dupont",
+      "email": "jean.dupont@company.com",
       "salary": 2000,
-      "hasSalary": true
+      "hasSalary": true,
+      "department": "informatique"
     },
     {
-        "id": 2,
-        "idManager": 2,
-        "firstname": "John Doe",
-        "salary": 0,
-        "hasSalary": false
+      "id": 2,
+      "idManager": 2,
+      "prenom": "John",
+      "nom": "Doe",
+      "email": "john.doe@company.com",
+      "salary": 0,
+      "hasSalary": false,
+      "department": "marketing"
     },
     {
       "id": 3,
       "idManager": 4,
-      "firstname": "Sarah Bernard",
+      "prenom": "Sarah",
+      "nom": "Bernard",
+      "email": "sarah.bernard@company.com",
       "salary": 1500,
-      "hasSalary": true
+      "hasSalary": true,
+      "department": "informatique"
     },
     {
       "id": 4,
       "idManager": 1,
-      "firstname": "Lucas Petit",
+      "prenom": "Lucas",
+      "nom": "Petit",
+      "email": "lucas.petit@company.com",
       "salary": 0,
-      "hasSalary": false
+      "hasSalary": false,
+      "department": "informatique"
     },
     {
       "id": 5,
       "idManager": 5,
-      "firstname": "Marie Lambert",
+      "prenom": "Marie",
+      "nom": "Lambert",
+      "email": "marie.lambert@company.com",
       "salary": 1800,
-      "hasSalary": true
+      "hasSalary": true,
+      "department": "marketing"
     }
   ],
   "employees": [
