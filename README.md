@@ -14,7 +14,89 @@ Une requête **GET** vers `http://localhost:3002/employees` avec les paramètres
 
 ---
 
-### Exo 2 — Liste des employés
+### Exo 6 — InternList
+
+#### 6.1 ReferenceField génère quel appel HTTP pour résoudre le manager ?
+
+GET /employees/1. Il fait une requête par manager différent dans la liste.
+
+#### 6.2 Que se passe-t-il visuellement si managerId ne correspond à aucun employé ?
+
+La colonne reste vide.
+
+---
+
+### Exo 7 — InternCreate & InternEdit
+
+#### 7.1 Quelle méthode HTTP est émise lors de la soumission de InternCreate ?
+
+POST /interns avec les données du formulaire dans le body.
+
+#### 7.2 Quel hook utilisez-vous pour la validation conditionnelle de remuneration ?
+
+La fonction validate du NumberInput avec (value, values). values contient hasSalary, pas besoin d'importer react-hook-form.
+
+---
+
+### Exo 8 — InternShow & ManagerCard
+
+#### 8.1 Différence entre useGetOne et ReferenceField ?
+
+ReferenceField est un composant prêt à l'emploi pour une référence dans Datagrid/Show. useGetOne est un hook qui donne le contrôle (gestion de isPending, error, data soi-même). useGetOne est utile quand on veut un affichage custom.
+
+#### 8.2 Que se passe-t-il si useGetOne reçoit id: undefined sans enabled ?
+
+Il envoie GET /employees/undefined (requête invalide). enabled bloque la requête tant que l'id n'est pas défini.
+
+---
+
+### Exo 9 — Enrichissement EmployeeShow
+
+#### 9.1 Différence entre useGetList et ReferenceManyField ?
+
+ReferenceManyField s'utilise dans Show/Edit et gère tout automatiquement. useGetList est utilisable partout, meme dans un Dashboard. useGetList est indispensable en dehors du contexte Show/Edit.
+
+#### 9.2 Comment optimiser la requête de DepartmentStats pour ne récupérer que le total ?
+
+perPage: 1. React-Admin récupère le total depuis l'en-tête x-total-count sans charger tous les employés.
+
+---
+
+### Exo 10 — QuickStatusToggle
+
+#### 10.1 Quelle méthode HTTP useUpdate utilise-t-il par défaut ? Comment forcer PATCH ?
+
+PUT. Pour utiliser PATCH il faut modifier le dataProvider.
+
+#### 10.2 Pourquoi previousData est-il nécessaire dans useUpdate ?
+
+previousData donne l'état précédent au dataProvider. Sans lui, les champs non modifiés risquent d'être écrasés par undefined.
+
+---
+
+### Exo 11 — useCreate & Formulaire rapide
+
+#### 11.1 Différence entre useCreate et le composant Create ?
+
+Create est une page entière avec formulaire et redirection. useCreate est un hook pour creer depuis une modale ou un bouton sans quitter la page.
+
+#### 11.2 Comment recharger la liste après une création via useCreate ?
+
+Avec refetch() de useListContext dans le onSuccess de useCreate.
+
+---
+
+### Exo 12 — Dashboard
+
+#### 12.1 Les 4 appels useGetList se font-ils en parallèle ou en séquence ?
+
+En parallèle. Les 4 hooks sont appelés au meme endroit, React lance toutes les requêtes en meme temps.
+
+#### 12.2 Pourquoi perPage: 1 est préféré à perPage: 100 ?
+
+perPage: 1 charge 1 seul enregistrement au lieu de tous. On a besoin seulement du total, pas des données.
+
+---
 
 #### 2.1 Que fait la prop rowClick="edit" sur le Datagrid ?
 
