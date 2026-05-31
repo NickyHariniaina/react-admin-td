@@ -6,6 +6,7 @@ import {
   EditButton,
   List,
   NumberField,
+  ReferenceField,
   SearchInput,
   TextField,
   TopToolbar,
@@ -17,7 +18,7 @@ const internFilters = [
     key="q"
     source="q"
     alwaysOn
-    placeholder="john doe / 1"
+    placeholder="john doe"
   />,
 ];
 
@@ -37,23 +38,25 @@ export const InternList = () => {
       actions={<ListActions />}
     >
       <DataTable rowClick="show">
-        <DataTable.Col source="prenom">
-          <TextField source="prenom" />
+        <DataTable.Col source="firstname">
+          <TextField source="firstname" />
         </DataTable.Col>
-        <DataTable.Col source="idManager">
-          <NumberField source="idManager" />
+        <DataTable.Col source="idManager" label="Manager">
+          <ReferenceField source="idManager" reference="employees">
+            <TextField source="firstname" />
+          </ReferenceField>
         </DataTable.Col>
-        <DataTable.Col source="salaire">
+        <DataTable.Col source="salary">
           <NumberField
-            source="salaire"
+            source="salary"
             options={{
               style: "currency",
               currency: "EUR",
             }}
           />
         </DataTable.Col>
-        <DataTable.Col source="hasSalaire">
-          <BooleanField source="hasSalaire" />
+        <DataTable.Col source="hasSalary">
+          <BooleanField source="hasSalary" />
         </DataTable.Col>
         <DataTable.Col>
           <EditButton />
