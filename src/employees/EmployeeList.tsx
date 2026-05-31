@@ -12,6 +12,7 @@ import {
   TopToolbar,
 } from "react-admin";
 import { CustomPagination } from "./CustomPagination";
+import { QuickStatusToggle } from "./QuickStatusToggle";
 
 const employeeFilters = [
   <SearchInput
@@ -67,6 +68,9 @@ export const EmployeeList = () => {
         </DataTable.Col>
         <DataTable.Col source="isActive">
           <BooleanField source="isActive" />
+        </DataTable.Col>
+        <DataTable.Col label="Actions">
+          <QuickStatusToggle />
         </DataTable.Col>
         <DataTable.Col>
           <EditButton />
