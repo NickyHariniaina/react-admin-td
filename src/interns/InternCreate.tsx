@@ -13,12 +13,12 @@ export const InternCreate = () => {
   return (
     <Create>
       <SimpleForm>
-        <TextInput source="prenom" validate={[required()]} />
+        <TextInput source="firstname" validate={[required()]} />
         <ReferenceInput source="idManager" reference="employees">
-          <SelectInput optionText="prenom" />
+          <SelectInput optionText="firstname" />
         </ReferenceInput>
-        <NumberInput source="salaire" validate={[required()]} />
-        <BooleanInput source="hasSalaire" defaultValue={false} />
+        <NumberInput source="salary" validate={[required()]} />
+        <BooleanInput source="hasSalary" defaultValue={false} />
       </SimpleForm>
     </Create>
   );
