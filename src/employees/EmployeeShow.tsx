@@ -8,6 +8,8 @@ import {
   TextField,
   TopToolbar,
 } from "react-admin";
+import { DepartmentStats } from "./DepartmentStats";
+import { InternsByManager } from "./InternsByManager";
 
 const ShowActions = () => (
   <TopToolbar>
@@ -16,19 +18,19 @@ const ShowActions = () => (
   </TopToolbar>
 );
 
-export const EmployeeShow = () => {
-  return (
-    <Show actions={<ShowActions />}>
-      <SimpleShowLayout>
-        <TextField source="firstname" />
-        <TextField source="email" />
-        <TextField source="department" />
-        <NumberField
-          source="salary"
-          options={{ style: "currency", currency: "EUR" }}
-        />
-        <BooleanField source="isActive" />
-      </SimpleShowLayout>
-    </Show>
-  );
-};
+export const EmployeeShow = () => (
+  <Show actions={<ShowActions />}>
+    <SimpleShowLayout>
+      <TextField source="firstname" />
+      <TextField source="email" />
+      <TextField source="department" />
+      <NumberField
+        source="salary"
+        options={{ style: "currency", currency: "EUR" }}
+      />
+      <BooleanField source="isActive" />
+      <InternsByManager />
+      <DepartmentStats />
+    </SimpleShowLayout>
+  </Show>
+);
