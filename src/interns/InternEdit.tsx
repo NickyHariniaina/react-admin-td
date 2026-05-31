@@ -13,19 +13,19 @@ import {
 const InternTitle = () => {
   const record = useRecordContext();
   if (!record) return null;
-  return <span>Modifier : {record.prenom}</span>;
+  return <span>Modifier : {record.firstname}</span>;
 };
 
 export const InternEdit = () => {
   return (
     <Edit title={<InternTitle />}>
       <SimpleForm>
-        <TextInput source="prenom" validate={[required()]} />
+        <TextInput source="firstname" validate={[required()]} />
         <ReferenceInput source="idManager" reference="employees">
-          <SelectInput optionText="prenom" />
+          <SelectInput optionText="firstname" />
         </ReferenceInput>
-        <NumberInput source="salaire" validate={[required()]} />
-        <BooleanInput source="hasSalaire" defaultValue={false} />
+        <NumberInput source="salary" validate={[required()]} />
+        <BooleanInput source="hasSalary" defaultValue={false} />
       </SimpleForm>
     </Edit>
   );
