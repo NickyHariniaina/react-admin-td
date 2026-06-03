@@ -28,10 +28,7 @@ export const InternCreate = () => (
     <SimpleForm>
       <TextInput source="prenom" validate={[required()]} />
       <TextInput source="nom" validate={[required()]} />
-      <TextInput
-        source="email"
-        validate={[required(), validateEmail]}
-      />
+      <TextInput source="email" validate={[required(), validateEmail]} />
       <SelectInput
         source="department"
         validate={[required()]}

@@ -23,11 +23,7 @@ const ShowActions = () => (
 const ManagerLinkField = () => {
   const record = useRecordContext();
   if (!record) return null;
-  return (
-    <Link to={`/employees/${record.id}/show`}>
-      {record.firstname}
-    </Link>
-  );
+  return <Link to={`/employees/${record.id}/show`}>{record.firstname}</Link>;
 };
 
 export const InternShow = () => (
@@ -37,11 +33,7 @@ export const InternShow = () => (
       <TextField source="nom" label="Nom" />
       <TextField source="email" />
       <TextField source="department" />
-      <ReferenceField
-        source="idManager"
-        reference="employees"
-        label="Manager"
-      >
+      <ReferenceField source="idManager" reference="employees" label="Manager">
         <ManagerLinkField />
       </ReferenceField>
       <NumberField

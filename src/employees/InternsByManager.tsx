@@ -11,7 +11,11 @@ const formatSalary = (salary: number) =>
 export const InternsByManager = () => {
   const employee = useRecordContext();
 
-  const { data: interns, total, isPending } = useGetList("interns", {
+  const {
+    data: interns,
+    total,
+    isPending,
+  } = useGetList("interns", {
     filter: { idManager: employee?.id },
   });
 
@@ -29,9 +33,7 @@ export const InternsByManager = () => {
         )}
 
         {!isPending && (!interns || interns.length === 0) && (
-          <Typography color="textSecondary">
-            Aucun stagiaire encadré
-          </Typography>
+          <Typography color="textSecondary">Aucun stagiaire encadré</Typography>
         )}
 
         {!isPending &&

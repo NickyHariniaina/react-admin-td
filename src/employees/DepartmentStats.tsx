@@ -18,7 +18,7 @@ export const DepartmentStats = () => {
           Département {employee.department}
         </Typography>
         <Typography variant="body1">
-          {isPending ? "..." : total ?? 0} collègue(s) actif(s)
+          {isPending ? "..." : (total ?? 0)} collègue(s) actif(s)
         </Typography>
       </CardContent>
     </Card>

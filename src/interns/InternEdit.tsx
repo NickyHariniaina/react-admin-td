@@ -15,7 +15,11 @@ import {
 const InternTitle = () => {
   const record = useRecordContext();
   if (!record) return null;
-  return <span>Modifier : {record.prenom} {record.nom}</span>;
+  return (
+    <span>
+      Modifier : {record.prenom} {record.nom}
+    </span>
+  );
 };
 
 const validateEmail = regex(
@@ -35,10 +39,7 @@ export const InternEdit = () => (
     <SimpleForm>
       <TextInput source="prenom" validate={[required()]} />
       <TextInput source="nom" validate={[required()]} />
-      <TextInput
-        source="email"
-        validate={[required(), validateEmail]}
-      />
+      <TextInput source="email" validate={[required(), validateEmail]} />
       <SelectInput
         source="department"
         validate={[required()]}

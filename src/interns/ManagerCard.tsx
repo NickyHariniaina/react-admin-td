@@ -1,18 +1,14 @@
-import {
-  BooleanField,
-  useGetOne,
-  useRecordContext,
-} from "react-admin";
-import {
-  Card,
-  CardContent,
-  Typography,
-} from "@mui/material";
+import { BooleanField, useGetOne, useRecordContext } from "react-admin";
+import { Card, CardContent, Typography } from "@mui/material";
 
 export const ManagerCard = () => {
   const intern = useRecordContext();
 
-  const { data: manager, isPending, error } = useGetOne(
+  const {
+    data: manager,
+    isPending,
+    error,
+  } = useGetOne(
     "employees",
     { id: intern?.idManager },
     { enabled: !!intern?.idManager },
@@ -36,9 +32,7 @@ export const ManagerCard = () => {
     return (
       <Card sx={{ mt: 2 }}>
         <CardContent>
-          <Typography color="error">
-            Erreur de chargement du manager
-          </Typography>
+          <Typography color="error">Erreur de chargement du manager</Typography>
         </CardContent>
       </Card>
     );
@@ -63,11 +57,7 @@ export const ManagerCard = () => {
         >
           {manager.email}
         </Typography>
-        <BooleanField
-          source="isActive"
-          record={manager}
-          label="Statut"
-        />
+        <BooleanField source="isActive" record={manager} label="Statut" />
       </CardContent>
     </Card>
   );

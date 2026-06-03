@@ -1,10 +1,5 @@
 import { useGetList } from "react-admin";
-import {
-  Card,
-  CardContent,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Card, CardContent, Grid, Typography } from "@mui/material";
 
 const StatCard = ({
   title,
@@ -21,7 +16,7 @@ const StatCard = ({
         {title}
       </Typography>
       <Typography variant="h3" fontWeight="bold">
-        {isPending ? "..." : total ?? 0}
+        {isPending ? "..." : (total ?? 0)}
       </Typography>
     </CardContent>
   </Card>
@@ -50,16 +45,32 @@ export const Dashboard = () => {
   return (
     <Grid container spacing={3} sx={{ p: 3 }}>
       <Grid item xs={12} sm={6} md={3}>
-        <StatCard title="Total employés" total={totalEmployees} isPending={pendingEmp} />
+        <StatCard
+          title="Total employés"
+          total={totalEmployees}
+          isPending={pendingEmp}
+        />
       </Grid>
       <Grid item xs={12} sm={6} md={3}>
-        <StatCard title="Employés actifs" total={activeEmployees} isPending={pendingActive} />
+        <StatCard
+          title="Employés actifs"
+          total={activeEmployees}
+          isPending={pendingActive}
+        />
       </Grid>
       <Grid item xs={12} sm={6} md={3}>
-        <StatCard title="Total stagiaires" total={totalInterns} isPending={pendingInt} />
+        <StatCard
+          title="Total stagiaires"
+          total={totalInterns}
+          isPending={pendingInt}
+        />
       </Grid>
       <Grid item xs={12} sm={6} md={3}>
-        <StatCard title="Stagiaires rémunérés" total={paidInterns} isPending={pendingPaid} />
+        <StatCard
+          title="Stagiaires rémunérés"
+          total={paidInterns}
+          isPending={pendingPaid}
+        />
       </Grid>
     </Grid>
   );

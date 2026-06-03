@@ -61,8 +61,7 @@ export const theme = deepmerge(defaultTheme, {
     MuiPaper: {
       styleOverrides: {
         root: {
-          boxShadow:
-            "0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03)",
+          boxShadow: "0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03)",
         },
       },
     },
