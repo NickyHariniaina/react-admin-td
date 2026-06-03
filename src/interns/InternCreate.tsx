@@ -10,17 +10,24 @@ import {
   SimpleForm,
   TextInput,
 } from "react-admin";
+import { useWatch } from "react-hook-form";
 
 const validateEmail = regex(
   /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
   "Format d'email invalide",
 );
 
-const validateSalary = (value: number | null | undefined, values: any) => {
-  if (values?.hasSalary && (!value || value <= 0)) {
-    return "Le salaire est obligatoire si rémunéré";
-  }
-  return undefined;
+const SalaryInput = () => {
+  const hasSalary = useWatch({ name: "hasSalary" });
+
+  const validateSalary = (value: number | null | undefined) => {
+    if (hasSalary && (!value || value <= 0)) {
+      return "Le salaire est obligatoire si rémunéré";
+    }
+    return undefined;
+  };
+
+  return <NumberInput source="salary" validate={[validateSalary]} />;
 };
 
 export const InternCreate = () => (
@@ -56,7 +63,7 @@ export const InternCreate = () => (
           </ReferenceInput>
         )}
       </FormDataConsumer>
-      <NumberInput source="salary" validate={[validateSalary]} />
+      <SalaryInput />
       <BooleanInput source="hasSalary" defaultValue={false} />
     </SimpleForm>
   </Create>
