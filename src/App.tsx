@@ -1,5 +1,6 @@
 import { Admin, Resource } from "react-admin";
 import { Layout } from "./Layout";
+import { authProvider } from "./authProvider";
 import { dataProvider } from "./dataProvider";
 import { Dashboard } from "./Dashboard";
 import { EmployeeList } from "./employees/EmployeeList";
@@ -12,7 +13,7 @@ import { InternEdit } from "./interns/InternEdit";
 import { InternShow } from "./interns/InternShow";
 
 export const App = () => (
-  <Admin layout={Layout} dataProvider={dataProvider} dashboard={Dashboard}>
+    <Admin layout={Layout} authProvider={authProvider} dataProvider={dataProvider} dashboard={Dashboard}>
     <Resource
       name="employees"
       list={EmployeeList}

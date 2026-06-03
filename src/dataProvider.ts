@@ -40,9 +40,7 @@ export const dataProvider: DataProvider = {
   getMany: (resource, params) =>
     Promise.all(
       params.ids.map((id) =>
-        httpClient(`${API_URL}/${resource}/${id}`).then(
-          (json) => json.data,
-        ),
+        httpClient(`${API_URL}/${resource}/${id}`).then((json) => json.data),
       ),
     ).then((data) => ({ data })),
 
