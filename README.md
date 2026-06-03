@@ -34,7 +34,7 @@ POST /interns avec les données du formulaire dans le body.
 
 #### 7.2 Quel hook utilisez-vous pour la validation conditionnelle de remuneration ?
 
-La fonction validate du NumberInput avec (value, values). values contient hasSalary, pas besoin d'importer react-hook-form.
+useWatch de react-hook-form. useWatch({ name: "hasSalary" }) réagit en temps réel à la valeur de hasSalary pour rendre la validation du salaire conditionnelle sans dépendre du second paramètre values de la fonction validate.
 
 ---
 
